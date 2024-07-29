@@ -1,27 +1,27 @@
 package com.mycode.mess_master.service;
 
-import com.mycode.mess_master.model.DepartmentTable;
-import com.mycode.mess_master.repository.DepartmentTableRepository;
+import com.mycode.mess_master.model.Department;
+import com.mycode.mess_master.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DepartmentTableService {
+public class DepartmentService {
 
     @Autowired
-    private DepartmentTableRepository departmentTableRepository;
+    private DepartmentRepository departmentTableRepository;
 
-    public DepartmentTable get(Integer id) {
+    public Department get(Integer id) {
         return departmentTableRepository.findById(id).get();
     }
 
-    public void save(DepartmentTable departmentTable) {
+    public void save(Department departmentTable) {
         departmentTableRepository.save(departmentTable);
     }
 
-    public List<DepartmentTable> listAll() {
+    public List<Department> listAll() {
         return departmentTableRepository.findAll();
     }
 
